@@ -8,5 +8,5 @@ git init
 git add -A
 git commit -m 'start'
 # 部署到 https://<github用户名>.github.io/<仓库名>
-git push -f git@github.com:<DestinyXsy>/<signUP>.git develop:gh-pages
+git push -f git@github.com:DestinyXsy/signUP.git develop:gh-pages
 cd -
