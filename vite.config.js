@@ -9,5 +9,5 @@ export default defineConfig({
   publicPath: process.env.NODE_ENV === 'production' ?
     '/signUP/' :
     '/',
-  base: '/signUP'
+  base: '/signUP/'
 })
