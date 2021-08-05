@@ -22,3 +22,13 @@ if (url.endsWith('.js')) {
     const content = fs.readFileSync(p, 'utf-8')
     ctx.body = rewriteImport(content)
 }
+
+if(url.startsWith('/@modules/')){
+    // 这是一个node_module里的东西
+    const prefix = path.resolve(__dirname,'node_modules',url.replace('/@modules/',''))
+    const module = require(prefix+'/package.json').module
+    const p = path.resolve(prefix,module)
+    const ret = fs.readFileSync(p,'utf-8')
+    ctx.type = 'application/javascript'
+    ctx.body = rewriteImport(ret)
+  }
